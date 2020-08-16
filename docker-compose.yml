@@ -9,4 +9,10 @@ services:
     volumes:
       - .:/app
     stdin_open : true
-      
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+    command: ["npm" , "run" , "test"]  
